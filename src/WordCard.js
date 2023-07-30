@@ -41,7 +41,6 @@ export default function WordCard(props){
                 {state.chars.map((c,i)=><CharacterCard value={c} key={i}activationHandler={activationHandler} attempt={state.attempt}/>) }
                 <h2>attempt score : {state.attempt}</h2>
                 
-
         </div>
     );
 }
