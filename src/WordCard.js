@@ -10,7 +10,8 @@ const prepareStateFromWord = (given_word) => {
     chars,
     attempt: 1,
     guess: '',
-    completed: false
+    completed: false,
+    score: 0
     }
    }
    
@@ -24,8 +25,8 @@ export default function WordCard(props){
 
             if(guess.length == state.word.length){
                 if(guess == state.word){
-                    console.log('yeah!')
                     setState({...state, guess: '', completed: true})
+                    setMessage("excellent!!")
                 }else{
                     console.log('reset')
                     setState({...state, guess: '', attempt: state.attempt + 1})
@@ -33,14 +34,19 @@ export default function WordCard(props){
             }
         }
 
+        const [message, setMessage] = useState('');
 
-    
+        const answerClick = () => {
+            setMessage(state.word);
+    };
+  
     return (
         <div>
                 <h1>WordCardGame</h1>
                 {state.chars.map((c,i)=><CharacterCard value={c} key={i}activationHandler={activationHandler} attempt={state.attempt}/>) }
                 <h2>attempt score : {state.attempt}</h2>
-                
+                <button onClick={answerClick}>answer</button>
+                <p>{message}</p>
         </div>
     );
 }

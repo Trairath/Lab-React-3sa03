@@ -8,6 +8,7 @@ export default function CharacterCard(props) {
         if(!active){
             setActive(true)
             props.activationHandler(props.value)
+            console.log('reset')
         }
     }
 
