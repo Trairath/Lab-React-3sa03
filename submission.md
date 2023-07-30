@@ -1,0 +1,1 @@
+1)เพิ่มในส่วนของ attempt score โดยแสดงค่าจากตัวแปร {state.attempt}
