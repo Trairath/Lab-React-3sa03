@@ -54,8 +54,10 @@ export default function WordCard(props){
                 <h2>attempt score : {state.attempt}</h2>
                 <button onClick={answerClick}>answer</button>
                 <p >{answermessage}</p>
+                <h1>hint : {state.word[0]}***{state.word[4]}</h1>
                 <button onClick={restart}>restart</button>
                 <p >{message}</p>
+                
         </div>
     );
 }
