@@ -50,7 +50,6 @@ export default function WordCard(props){
   
     return (
         <div>
-                <h1>WordCardGame</h1>
                 {state.chars.map((c,i)=><CharacterCard value={c} key={i}activationHandler={activationHandler} attempt={state.attempt}/>) }
                 <h2>attempt score : {state.attempt}</h2>
                 <button onClick={answerClick}>answer</button>
